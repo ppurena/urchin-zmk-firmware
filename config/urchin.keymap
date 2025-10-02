@@ -20,6 +20,11 @@
 #define SETTINGS 6
 // -----------------
 
+// tapping term definition
+#define TAP_TERM_MS 200
+#define QUICK_TAP_MS 125
+
+
 &sk {
 	// don't release mods on other mods presses
 	ignore-modifiers;
