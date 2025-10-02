@@ -24,6 +24,11 @@
 #define TAP_TERM_MS 200
 #define QUICK_TAP_MS 125
 
+// 34 keys physical layout
+#define LEFT_KEYS 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 // left-hand keys
+#define RIGHT_KEYS 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 // right-hand keys
+#define THUMBS 30 31 32 33 // thumb keys
+
 
 &sk {
 	// don't release mods on other mods presses
