@@ -107,6 +107,13 @@
 			bindings = <&kp MINUS>, <&kp UNDER>;
 			mods = <(MOD_LSFT)>;
 		};
+
+		sp_n: sp_n {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&uc 0x00F1>, <&uc 0x00D1>;
+			mods = <(MOD_LSFT)>;
+		};
 	};
 
 	macros {
@@ -161,7 +168,7 @@
 				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
 						&kp Q          &kp W          &kp E          &kp R          &kp T               &kp Y        &kp U          &kp I          &kp O          &kp P
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-						&hml LGUI A    &hml LALT S    &hml LCTRL  D  &hml LSHIFT F  &kp G               &kp H        &hmr RSHIFT J  &hmr RCTRL K   &hmr RALT L   &hmr RGUI SEMICOLON
+						&hml LGUI A    &hml LALT S    &hml LCTRL  D  &hml LSHIFT F  &kp G               &kp H        &hmr RSHIFT J  &hmr RCTRL K   &hmr RALT L   &hmr RGUI sp_n
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
 						&kp Z          &kp X          &kp C          &kp V          &kp B               &kp N        &kp M          &comma_semi    &dot_colon     &minus_under
 				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
@@ -172,14 +179,14 @@
 
 		// Numbers and high frequency symbols
 		sym_layer {
-			label = "Sym.";
+			label = "Sym";
 			bindings = <
 				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-					  &kp GRAVE      &kp DQT        &kp PLUS       &kp ASTRK      &kp PERCENT          &kp PIPE       &kp LBRC       &kp RBRC       &kp QMARK      xxx
+					  &kp GRAVE      &kp DQT        &kp PLUS       &kp ASTRK      &kp PERCENT          &kp PIPE       &kp LBRC       &kp RBRC       &kp QMARK       RA(E)
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
 						&kp AT         &kp SQT        &kp LT         &kp GT         &kp EQUAL            &kp AMPS       &kp LPAR       &kp RPAR       &kp DLLR        xxx
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-					xxx             &kp NUBS       &kp FSLH       &kp HASH       &kp CARET            &kp TILDE      &kp LBKT       &kp RBKT       &kp EXCL        xxx
+					  S_DEG          &kp NUBS       &kp FSLH       &kp HASH       &kp CARET            &kp TILDE      &kp LBKT       &kp RBKT       &kp EXCL        xxx
 				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
 																													  ___            ___                  ___            xxx          
              //                                        ╰──────────────┴──────────────╯     ╰──────────────┴──────────────╯
@@ -212,9 +219,9 @@
 		symbols_2_layer {
 			label = "Sym.2";
 			bindings = <
-			&kp IT_CARET &kp IT_UNDER &kp IT_PND &kp IT_EUR &kp IT_HASH         &none &none &none &none &none 
-			&kp IT_BKTK &kp IT_TILDE &kp IT_BSLH &kp IT_PIPE &kp IT_AND         &none &none &none &none &none
-			&none 			&none 			 &kp IT_SECT &kp IT_CCED &kp IT_DEG				  &none &none &none &none &none
+			&kp ES_CARET &kp IT_UNDER &kp IT_PND &kp IT_EUR &kp IT_HASH         &none &none &none &none &none 
+			&kp ES_BKTK &kp IT_TILDE &kp IT_BSLH &kp IT_PIPE &kp IT_AND         &none &none &none &none &none
+			&none 			&none 			 &kp ES_SECT &kp IT_CCED &kp IT_DEG				  &none &none &none &none &none
 																	&none &none        	&none &none 
 			>;
 		};
@@ -223,9 +230,9 @@
 		accent_layer {
 			label = "Accent";
 			bindings = <
-			&none &none &none &kp IT_CEGR &none                         &none &none &none &none &none 
-			&kp IT_AGRV &kp IT_IGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU &none &none &none &none &none
-			&none &none &none &kp IT_UGRV &none                         &none &none &none &none &none
+			&none &none &none &kp ES_CEGR &none                         &none &none &none &none &none 
+			&kp ES_AGRV &kp IT_IGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU &none &none &none &none &none
+			&none &none &none &kp ES_UGRV &none                         &none &none &none &none &none
 									&none &none                         &none &none 
 			>;
 		};
