@@ -86,6 +86,14 @@
 			hold-trigger-on-release;
 		};
 
+		// TAP DANCES
+		curr_deg: tap_dance_curr_deg {
+				compatible = "zmk,behavior-tap-dance";
+				#binding-cells = <0>;
+				tapping-term-ms = <TAP_TERM_MS>;
+				bindings = <&kp DLLR>, <&kp LA(N5)>, <&kp deg>;
+		};
+
 		comma_semi: comma_semi {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
