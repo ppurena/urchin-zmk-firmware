@@ -186,7 +186,7 @@
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
 						&kp AT         &kp SQT        &kp LT         &kp GT         &kp EQUAL            &kp AMPS       &kp LPAR       &kp RPAR       &kp DLLR        xxx
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-					  &kp S_DEG      &kp NUBS       &kp FSLH       &kp HASH       &kp CARET            &kp TILDE      &kp LBKT       &kp RBKT       &kp EXCL        &kp ES_QUES
+					  &kp ES_DEG     &kp NUBS       &kp FSLH       &kp HASH       &kp CARET            &kp TILDE      &kp LBKT       &kp RBKT       &kp EXCL        &kp ES_QUES
 				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
 																													  ___            ___                  ___            xxx          
              //                                        ╰──────────────┴──────────────╯     ╰──────────────┴──────────────╯
@@ -219,9 +219,9 @@
 		symbols_2_layer {
 			label = "Sym.2";
 			bindings = <
-			&kp ES_CARET &kp IT_UNDER &kp IT_PND &kp IT_EUR &kp IT_HASH         &none &none &none &none &none 
-			&kp ES_BKTK &kp IT_TILDE &kp IT_BSLH &kp IT_PIPE &kp IT_AND         &none &none &none &none &none
-			&none 			&none 			 &kp ES_SECT &kp IT_CCED &kp IT_DEG				  &none &none &none &none &none
+			&kp ES_CARET &kp ES_UNDER &kp ES_PND &kp ES_EUR &kp ES_HASH         &none &none &none &none &none 
+			&kp ES_BKTK &kp ES_TILDE &kp ES_BSLH &kp ES_PIPE &kp ES_AND         &none &none &none &none &none
+			&none 			&none 			 &kp ES_SECT &kp ES_CCED &kp ES_DEG				  &none &none &none &none &none
 																	&none &none        	&none &none 
 			>;
 		};
@@ -231,7 +231,7 @@
 			label = "Accent";
 			bindings = <
 			&none &none &none &kp ES_CEGR &none                         &none &none &none &none &none 
-			&kp ES_AGRV &kp IT_IGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU &none &none &none &none &none
+			&kp ES_AGRV &kp ES_IGRV &kp ES_OGRV &kp ES_EGRV &kp ES_EACU &none &none &none &none &none
 			&none &none &none &kp ES_UGRV &none                         &none &none &none &none &none
 									&none &none                         &none &none 
 			>;
