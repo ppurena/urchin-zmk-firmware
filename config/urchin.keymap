@@ -87,13 +87,6 @@
 		};
 
 		// TAP DANCES
-		curr_deg: tap_dance_curr_deg {
-				compatible = "zmk,behavior-tap-dance";
-				#binding-cells = <0>;
-				tapping-term-ms = <TAP_TERM_MS>;
-				bindings = <&kp DLLR>, <&kp LA(N5)>, <&kp deg>;
-		};
-
 		comma_semi: comma_semi {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
@@ -182,7 +175,7 @@
 			label = "Sym.";
 			bindings = <
 				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-					  &kp GRAVE      &kp DQT        &kp PLUS       &kp ASTRK      &kp PERCENT          &kp PIPE       &kp LBRC       &kp RBRC       &kp QMARK      &curr_deg
+					  &kp GRAVE      &kp DQT        &kp PLUS       &kp ASTRK      &kp PERCENT          &kp PIPE       &kp LBRC       &kp RBRC       &kp QMARK      xxx
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
 						&kp AT         &kp SQT        &kp LT         &kp GT         &kp EQUAL            &kp AMPS       &kp LPAR       &kp RPAR       &kp DLLR        xxx
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
