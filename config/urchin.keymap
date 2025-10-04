@@ -62,9 +62,9 @@
 			bindings = <&kp>, <&kp>;
 		};
 
-		uc: unicode_input {
-				compatible = "zmk,behavior-unicode";
-		};
+//		uc: unicode_input {
+//				compatible = "zmk,behavior-unicode";
+//		};
 
 		// HOME ROW MODS
 		hml: left_hand_positional_hold_tap {
@@ -113,12 +113,12 @@
 			mods = <(MOD_LSFT)>;
 		};
 
-		sp_n: spanish_n {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&uc 0x00F1>, <&uc 0x00D1>;
-			mods = <(MOD_LSFT)>;
-		};
+//  	sp_n: spanish_n {
+//			compatible = "zmk,behavior-mod-morph";
+//			#binding-cells = <0>;
+//			bindings = <&uc 0x00F1>, <&uc 0x00D1>;
+//			mods = <(MOD_LSFT)>;
+//		};
 	};
 
 	macros {
@@ -173,7 +173,7 @@
 				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
 						&kp Q          &kp W          &kp E          &kp R          &kp T               &kp Y        &kp U          &kp I          &kp O          &kp P
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-						&hml LGUI A    &hml LALT S    &hml LCTRL  D  &hml LSHIFT F  &kp G               &kp H        &hmr RSHIFT J  &hmr RCTRL K   &hmr RALT L   &hmr RGUI &sp_n
+						&hml LGUI A    &hml LALT S    &hml LCTRL  D  &hml LSHIFT F  &kp G               &kp H        &hmr RSHIFT J  &hmr RCTRL K   &hmr RALT L   &hmr RGUI ES_PND
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
 						&kp Z          &kp X          &kp C          &kp V          &kp B               &kp N        &kp M          &comma_semi    &dot_colon     &minus_under
 				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
