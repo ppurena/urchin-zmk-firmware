@@ -61,6 +61,11 @@
 			quick-tap-ms = <200>;
 			bindings = <&kp>, <&kp>;
 		};
+
+		uc: unicode_input {
+				compatible = "zmk,behavior-unicode";
+		};
+
 		// HOME ROW MODS
 		hml: left_hand_positional_hold_tap {
 			compatible = "zmk,behavior-hold-tap";
@@ -108,7 +113,7 @@
 			mods = <(MOD_LSFT)>;
 		};
 
-		sp_n: sp_n {
+		sp_n: spanish_n {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
 			bindings = <&uc 0x00F1>, <&uc 0x00D1>;
