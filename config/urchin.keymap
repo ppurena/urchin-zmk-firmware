@@ -13,7 +13,7 @@
 // Layer definitions
 #define BASE 0
 #define SYM 1
-#define EXT 2
+#define NUM 2
 #define FNC 3
 #define SYM2 4
 #define ACCENT 5
@@ -91,7 +91,15 @@
 			hold-trigger-on-release;
 		};
 
+
+		
 		// TAP DANCES
+		plus_minus: plus_minus {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp PLUS>, <&kp KP_MINUS>;
+			mods = <(MOD_LSFT)>;
+		};
 //		comma_semi: comma_semi {
 //			compatible = "zmk,behavior-mod-morph";
 //			#binding-cells = <0>;
@@ -168,23 +176,39 @@
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
 						&kp Z          &kp X          &kp C          &kp V          &kp B               &kp N         &kp M          &kp COMMA      &kp PERIOD     &kp ES_MINUS
 				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
-																												 &kp SPACE		  &kp TAB      				&kp RET 		  &lt SYM BSPC
+																												 &lt NUM SPACE  &kp TAB      				&kp RET 		  &lt SYM BSPC
              //                              					 ╰──────────────┴──────────────╯   ╰──────────────┴──────────────╯	
 			>;
 		};
 
-		// Numbers and high frequency symbols
+		// High frequency symbols
 		sym_layer {
 			label = "Sym";
 			bindings = <
 				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
 					  &kp ES_EGRV    &kp ES_DQUOT   &kp ES_PLUS    &kp ES_AST      &kp ES_PERC          &kp ES_PIPE   &kp ES_LBRC    &kp ES_RBRC    &kp ES_QUES    &kp ES_OPQUES
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-						&kp ES_AT      &kp ES_SQUOT   &kp ES_LESS    &kp ES_GREAT    &kp ES_EQL           &kp ES_AND    &kp ES_LPAR    &kp ES_RPAR    &kp ES_USD     &kp ES_AGRV
+			&hml LGUI ES_AT &hml LALT ES_SQUOT &hml LCTRL ES_LESS &hml LSHFT ES_GREAT &kp ES_EQL &kp ES_AND &hmr RSHIFT ES_LPAR &hmr RCTRL ES_RPAR &hmr RALT ES_USD &hmr RGUI ES_AGRV
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-					  xxx            &kp ES_BSLH    &kp ES_FSLH    &kp ES_HASH     &kp ES_EACU          &kp ES_TILDE  &kp ES_LBKT    &kp ES_RBKT    &kp ES_EXCL    &kp ES_OPEXCL
+					  &kp ES_DEG     &kp ES_BSLH    &kp ES_FSLH    &kp ES_HASH     &kp ES_CARET        &kp ES_TILDE  &kp ES_LBKT    &kp ES_RBKT    &kp ES_EXCL    &kp ES_OPEXCL
 				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
 																													  ___            ___                  ___            xxx          
+             //                                        ╰──────────────┴──────────────╯     ╰──────────────┴──────────────╯
+			>;
+		};
+
+		// High frequency symbols
+		num_layer {
+			label = "Num";
+			bindings = <
+				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+					  &kp ES_EGRV    &kp ES_DQUOT   &kp ES_PLUS    &kp ES_AST      &kp ES_PERC          &kp ES_MINUS   &kp N7    &kp N8    &kp N9    &kp ES_OPQUES
+				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+						&kp ES_AT      &kp ES_SQUOT   &kp ES_LESS    &kp ES_GREAT    &kp ES_EQL           &plus_minus    &kp N4    &kp N5    &kp N6     &kp KP_DOT
+				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+					  xxx            &kp ES_BSLH    &kp ES_FSLH    &kp ES_HASH     &kp ES_EACU          &kp ES_AST  &kp N1    &kp N2    &kp N3    &kp ES_OPEXCL
+				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
+																													  ___            ___                  ___         &kp N0          
              //                                        ╰──────────────┴──────────────╯     ╰──────────────┴──────────────╯
 			>;
 		};

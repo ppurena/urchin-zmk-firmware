@@ -21,6 +21,7 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
+#define ES_DEG   GRAVE           // º
 #define ES_SQUOT MINUS           // '
 #define ES_OPEXCL EQUAL          // ¡
 // Row 2 
@@ -61,22 +62,19 @@
 #define ES_QUES LS(MINUS)        // ?
 #define ES_OPQUES LS(EQUAL)      // ¿
 // Row 2
-#define ES_EACU LS(LBKT)         // ^
+#define ES_CARET LS(LBKT)         // ^
 #define ES_AST LS(RBKT)          // *
-// Row 3
-//#define ES_DEG LS(APOS)          // °
-//#define ES_SECT LS(NON_US_HASH)  // §
 // Row 4
 #define ES_GREAT LS(NON_US_BSLH) // >
 #define ES_UNDER LS(SLASH)       // _
 
 /* AltGr symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
- * │   │   │   │   │   │   │   │   │   │   │   │   │   │       │
+ * │   │ \ │ | │ @ │ # │ ~ │ { │ } │   │   │   │   │   │       │
  * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
  * │     │   │   │ € │   │   │   │   │   │   │   │ [ │ ] │     │
  * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐    │
- * │      │   │   │   │   │   │   │   │   │   │ @ │ # │   │    │
+ * │      │   │   │   │   │   │   │   │   │   │   │   │   │    │
  * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴────┤
  * │    │   │   │   │   │   │   │   │   │   │   │   │          │
  * ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤
@@ -84,7 +82,7 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define ES_BSLH RA(GRAVE)        
+#define ES_BSLH RA(GRAVE)        // 
 #define ES_PIPE RA(N1)           // |
 #define ES_AT RA(N2)             // @
 #define ES_HASH RA(N3)           // #
@@ -98,4 +96,3 @@
 #define ES_EUR  RA(E)            // €
 #define ES_LBKT RA(LBKT)         // [
 #define ES_RBKT RA(RBKT)         // ]
-// Row 3
