@@ -90,7 +90,7 @@
 #define ES_HASH RA(N3)           // #
 #define ES_TILDE RA(N4)          // ~
 #define ES_LBRC RA(N7)           // {
-#define ES_RBRC RA(N8)           // }
+#define ES_RBRC RA(N0)           // }
 
 
 
