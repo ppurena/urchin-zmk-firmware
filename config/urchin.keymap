@@ -141,6 +141,11 @@
 			layers = <BASE>;
 		};
 
+    combo_esc {
+        timeout-ms = <30>;
+        key-positions = <12 13>; // keys that trigger it
+        bindings = <&kp ESC>;
+    };
 
 	};
 

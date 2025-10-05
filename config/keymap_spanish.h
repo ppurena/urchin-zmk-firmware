@@ -88,13 +88,14 @@
 #define ES_PIPE RA(N1)           // |
 #define ES_AT RA(N2)             // @
 #define ES_HASH RA(N3)           // #
-#define ES_TILDE RA(N3)          // ~
+#define ES_TILDE RA(N4)          // ~
+#define ES_LBRC RA(N7)           // {
+#define ES_RBRC RA(N8)           // }
+
+
 
 // Row 2
 #define ES_EUR  RA(E)            // €
 #define ES_LBKT RA(LBKT)         // [
 #define ES_RBKT RA(RBKT)         // ]
 // Row 3
-#define ES_LBRC RA(SEMI)         // {
-#define ES_RBRC RA(APOS)         // }
-
