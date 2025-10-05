@@ -167,11 +167,11 @@
 			label = "Sym";
 			bindings = <
 				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-					  &kp GRAVE      &kp DQT        &kp PLUS       &kp ASTRK      &kp PERCENT          &kp PIPE       &kp LBRC       &kp RBRC       &kp QMARK       &kp RA(E)
+					  &kp ES_EGRV    &kp ES_DQUOT   &kp ES_PLUS    &kp ES_AST      &kp ES_PERC          &kp ES_PIPE   &kp ES_LBRC    &kp ES_RBRC    &kp ES_QUES    &kp ES_OPQUES
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-						&kp AT         &kp SQT        &kp LT         &kp GT         &kp EQUAL            &kp AMPS       &kp ES_LPAR    &kp ES_RPAR    &kp DLLR        &kp ES_AGRV
+						&kp ES_AT      &kp ES_SQUOT   &kp ES_LESS    &kp ES_GREAT    &kp ES_EQL           &kp ES_AND    &kp ES_LPAR    &kp ES_RPAR    &kp ES_USD     &kp ES_AGRV
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-					  xxx		xxx		xxx		xxx		xxx		xxx		xxx		xxx		xxx		xxx		
+					  xxx            &kp ES_BSLH    &kp ES_FSLH    &kp ES_HASH     &kp ES_EACU          &kp ES_TILDE  &kp ES_LBKT    &kp ES_RBKT    &kp ES_EXCL    &kp ES_OPEXCL
 				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
 																													  ___            ___                  ___            xxx          
              //                                        ╰──────────────┴──────────────╯     ╰──────────────┴──────────────╯

@@ -23,7 +23,7 @@
 // Row 1
 #define ES_SQUOT MINUS           // '
 #define ES_OPEXCL EQUAL          // ¡
-// Row 2
+// Row 2 
 #define ES_EGRV LBKT             // `
 #define ES_PLUS SLASH            // +
 // Row 3
@@ -31,7 +31,7 @@
 #define ES_AGRV APOS             // ´
 // Row 4
 #define ES_LESS NON_US_BSLH      // <
-#define ES_MINUS RBKT            // -
+#define ES_MINUS SLASH           // -
 
 /* Shifted symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
