@@ -100,6 +100,12 @@
 			bindings = <&kp PLUS>, <&kp KP_MINUS>;
 			mods = <(MOD_LSFT)>;
 		};
+		mult_div: plus_minus {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp ES_AST>, <&kp ES_FSLH>;
+			mods = <(MOD_LSFT)>;
+		};
 //		comma_semi: comma_semi {
 //			compatible = "zmk,behavior-mod-morph";
 //			#binding-cells = <0>;
@@ -202,11 +208,11 @@
 			label = "Num";
 			bindings = <
 				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-					  &kp ES_EGRV    &kp ES_DQUOT   &kp ES_PLUS    &kp ES_AST      &kp ES_PERC          &kp ES_MINUS   &kp N7    &kp N8    &kp N9    &kp ES_OPQUES
+					  &kp ES_EGRV    &kp ES_DQUOT   &kp ES_PLUS    &kp ES_AST      &kp ES_PERC          &mul_div      &kp N7    &kp N8    &kp N9    &kp ES_OPQUES
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-						&kp ES_AT      &kp ES_SQUOT   &kp ES_LESS    &kp ES_GREAT    &kp ES_EQL           &plus_minus    &kp N4    &kp N5    &kp N6     &kp KP_DOT
+						&kp LGUI      &kp LALT   &kp LCTRL    &kp LSHIFT    xxx                           &plus_minus    &kp N4    &kp N5    &kp N6     &kp KP_DOT
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-					  xxx            &kp ES_BSLH    &kp ES_FSLH    &kp ES_HASH     xxx                 &kp ES_AST  &kp N1    &kp N2    &kp N3    &kp ES_OPEXCL
+					  xxx           xxx     xxx     xxx      xxx                                       &kp ES_AST  &kp N1    &kp N2    &kp N3    &kp ES_OPEXCL
 				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
 																													  ___            ___                  ___         &kp N0          
              //                                        ╰──────────────┴──────────────╯     ╰──────────────┴──────────────╯
