@@ -101,7 +101,7 @@
 			mods = <(MOD_LSFT)>;
 		};
 
-		mult_div: mult_div {
+		mul_div: mult_div {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
 			bindings = <&kp ES_AST>, <&kp ES_FSLH>;
