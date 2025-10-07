@@ -26,7 +26,7 @@
 #define ES_OPEXCL EQUAL          // ¡
 // Row 2 
 #define ES_EGRV LBKT             // `
-#define ES_PLUS SLASH            // +
+#define ES_PLUS RBKT             // +
 // Row 3
 #define ES_N    SEMI             // ñ
 #define ES_AGRV APOS             // ´
