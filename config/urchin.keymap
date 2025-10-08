@@ -15,7 +15,7 @@
 #define SYM 1
 #define NUM 2
 #define NAV 3
-#define SYM2 4
+#define FUNC 4
 #define ACCENT 5
 #define SETTINGS 6
 // -----------------
@@ -62,10 +62,6 @@
 			bindings = <&kp>, <&kp>;
 		};
 
-//		uc: unicode_input {
-//				compatible = "zmk,behavior-unicode";
-//		};
-
 		// HOME ROW MODS
 		hml: left_hand_positional_hold_tap {
 			compatible = "zmk,behavior-hold-tap";
@@ -91,13 +87,11 @@
 			hold-trigger-on-release;
 		};
 
-
-		
 		// TAP DANCES
 		plus_minus: plus_minus {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
-			bindings = <&kp PLUS>, <&kp KP_MINUS>;
+			bindings = <&kp ES_PLUS>, <&kp KP_MINUS>;
 			mods = <(MOD_LSFT)>;
 		};
 
@@ -114,13 +108,6 @@
 			bindings = <&kp PERIOD>, <&kp COMMA>;
 			mods = <(MOD_LSFT)>;
 		};
-//		comma_semi: comma_semi {
-//			compatible = "zmk,behavior-mod-morph";
-//			#binding-cells = <0>;
-//			bindings = <&kp COMMA>, <&kp SEMICOLON>;
-//			mods = <(MOD_LSFT)>;
-//		};
-
 	};
 
 	macros {
@@ -149,19 +136,19 @@
 			bindings = <&mo SYM2>;
 		};
 		// both left thumb keys
-		combo_settings {
+		combo_function_keys {
 			timeout-ms = <200>;
 			key-positions = <30 31>;
-			bindings = <&mo SETTINGS>;
+			bindings = <&mo FUNC>;
 		};
 		// left index & middle fingers (home-row)
 		// hold control & space for Adobe workflow
-		combo_ctrl_space {
-			timeout-ms = <200>;
-			key-positions = <12 13>;
-			bindings = <&kp LC(SPACE)>;
-			layers = <BASE>;
-		};
+		//combo_ctrl_space {
+		//	timeout-ms = <200>;
+		//	key-positions = <12 13>;
+		//	bindings = <&kp LC(SPACE)>;
+		//	layers = <BASE>;
+		//};
 
     combo_esc {
         timeout-ms = <30>;
@@ -218,9 +205,9 @@
 				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
 					  xxx            xxx            xxx            xxx            xxx                  &mul_div       &kp N7         &kp N8         &kp N9         xxx
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-						&kp LGUI       &kp LALT       &kp LCTRL      &kp LSHIFT     xxx                  &plus_minus    &kp N4         &kp N5         &kp N6         xxx
+						&kp LGUI       &kp LALT       &kp LCTRL      &kp LSHIFT     xxx                  &period_comma  &kp N4         &kp N5         &kp N6         xxx
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-					  xxx            xxx            xxx            xxx            xxx                  &period_comma  &kp N1         &kp N2         &kp N3         xxx
+					  xxx            xxx            xxx            xxx            xxx                  &plus_minus    &kp N1         &kp N2         &kp N3         xxx
 				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
 																													  ___            ___                  ___         &kp N0          
              //                                        ╰──────────────┴──────────────╯     ╰──────────────┴──────────────╯
@@ -232,13 +219,29 @@
 			label = "Nav";
 			bindings = <
 				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-					  xxx            xxx            xxx            xxx            xxx                  &kp K_UNDO       &kp C_AC_REDO  &kp K_COPY  &kp C_AC_COPY   &kp K_PASTE
+					  xxx            xxx            xxx            xxx            xxx                  &kp K_UNDO     &kp C_AC_REDO  &kp K_COPY     &kp C_AC_COPY   &kp LCAPS
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-						&kp LGUI       &kp LALT       &kp LCTRL      &kp LSHIFT     xxx                  &kp LEFT    &kp DOWN         &kp UP         &kp RIGHT         xxx
+						&kp LGUI       &kp LALT       &kp LCTRL      &kp LSHIFT     xxx                  &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT         xxx
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-					  xxx            xxx            xxx            xxx            xxx                  &kp HOME       &kp PG_DN         &kp PG_UP         &kp END         xxx
+					  xxx            xxx            xxx            xxx            xxx                  &kp HOME       &kp PG_DN      &kp PG_UP      &kp END         xxx
 				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
 																													  ___            ___                  ___            ___
+             //                                        ╰──────────────┴──────────────╯     ╰──────────────┴──────────────╯
+			>;
+		};
+
+		// Function
+		func_layer {
+			label = "Func";
+			bindings = <
+				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+					  xxx            xxx            xxx            xxx            xxx                  &kp F12        &kp F7         &kp F8         &kp F9         xxx
+				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+						&kp LGUI       &kp LALT       &kp LCTRL      &kp LSHIFT     xxx                  &kp F11        &kp F4         &kp F5         &kp F6         xxx
+				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+					  xxx            xxx            xxx            xxx            xxx                                 &kp F1         &kp F2         &kp F3         xxx
+				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
+																													  ___            ___                  ___         &kp F10          
              //                                        ╰──────────────┴──────────────╯     ╰──────────────┴──────────────╯
 			>;
 		};
@@ -275,17 +278,6 @@
 //			&kp ES_BKTK &kp ES_TILDE &kp ES_BSLH &kp ES_PIPE &kp ES_AND         &none &none &none &none &none
 //			&none 			&none 			 &kp ES_SECT &kp ES_CCED &kp ES_DEG				  &none &none &none &none &none
 //																	&none &none        	&none &none 
-//			>;
-//		};
-//
-//		// Used to type regional accents.
-//		accent_layer {
-//			label = "Accent";
-//			bindings = <
-//			&none &none &none &kp ES_CEGR &none                         &none &none &none &none &none 
-//			&kp ES_AGRV &kp ES_IGRV &kp ES_OGRV &kp ES_EGRV &kp ES_EACU &none &none &none &none &none
-//			&none &none &none &kp ES_UGRV &none                         &none &none &none &none &none
-//									&none &none                         &none &none 
 //			>;
 //		};
 //
