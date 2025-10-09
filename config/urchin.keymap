@@ -16,7 +16,7 @@
 #define NUM 2
 #define NAV 3
 #define FUNC 4
-#define ACCENT 5
+#define BLE 5
 #define SETTINGS 6
 // -----------------
 
@@ -108,6 +108,20 @@
 			bindings = <&kp PERIOD>, <&kp COMMA>;
 			mods = <(MOD_LSFT)>;
 		};
+
+		clck_slck: clck_slck {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp CAPSLOCK>, <&kp SCROLLLOCK>;
+			mods = <(MOD_LSFT)>;
+		};
+
+		vol_up_down: vol_up_down {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
+			mods = <(MOD_LSFT)>;
+		};
 	};
 
 	macros {
@@ -140,6 +154,12 @@
 			timeout-ms = <200>;
 			key-positions = <30 31>;
 			bindings = <&mo FUNC>;
+		};
+
+		combo_ble {
+			timeout-ms = <200>;
+			key-positions = <30 33>;
+			bindings = <&mo BLE>;
 		};
 		// left index & middle fingers (home-row)
 		// hold control & space for Adobe workflow
@@ -203,9 +223,9 @@
 			label = "Num";
 			bindings = <
 				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-					  xxx            xxx            xxx            xxx            xxx                  &mul_div       &kp N7         &kp N8         &kp N9         xxx
+					  xxx            xxx            xxx            xxx            xxx                  &mul_div       &kp N7         &kp N8         &kp N9         ES_DEG
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-						&kp LGUI       &kp LALT       &kp LCTRL      &kp LSHIFT     xxx                  &period_comma  &kp N4         &kp N5         &kp N6         xxx
+						&kp LGUI       &kp LALT       &kp LCTRL      &kp LSHIFT     xxx                  &period_comma  &kp N4         &kp N5         &kp N6         ES_EQL
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
 					  xxx            xxx            xxx            xxx            xxx                  &plus_minus    &kp N1         &kp N2         &kp N3         xxx
 				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
@@ -219,11 +239,11 @@
 			label = "Nav";
 			bindings = <
 				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-					  xxx            xxx            xxx            xxx            xxx                  &kp K_UNDO     &kp C_AC_REDO  &kp K_COPY     &kp C_AC_COPY   &kp LCAPS
+					  xxx            xxx            xxx            xxx            xxx                &kp PAUSE_BREAK  &kp PSCRN  		 &kp C_MUTE     &vol_up_down   &clck_slck
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-						&kp LGUI       &kp LALT       &kp LCTRL      &kp LSHIFT     xxx                  &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT         xxx
+						&kp LGUI       &kp LALT       &kp LCTRL      &kp LSHIFT     xxx                  &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &kp K_CMENU
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-					  xxx            xxx            xxx            xxx            xxx                  &kp HOME       &kp PG_DN      &kp PG_UP      &kp END         xxx
+					  xxx            xxx            xxx            xxx            xxx                  &kp HOME       &kp PG_DN      &kp PG_UP      &kp END        &kp INSERT
 				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
 																													  ___            ___                  ___            ___
              //                                        ╰──────────────┴──────────────╯     ╰──────────────┴──────────────╯
@@ -245,6 +265,22 @@
              //                                        ╰──────────────┴──────────────╯     ╰──────────────┴──────────────╯
 			>;
 		};
+
+		// Bluetooth
+		ble_layer {
+			label = "Ble";
+			bindings = <
+				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+					  xxx            xxx            xxx            xxx            xxx                  &bt BT_CLR     &bt BT_DISC    &out OUT_BLE   &out OUT_USB   &out OUT_TOG
+				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+						xxx            xxx            xxx            xxx            xxx                  xxx            &bt BT_SEL 3   &bt BT_SEL 4   xxx            xxx
+				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+					  &bootloader    xxx            xxx            xxx            xxx                  xxx            &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bootloader
+				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
+																													  xxx            xxx               xxx            xxx 
+             //                                        ╰──────────────┴──────────────╯     ╰──────────────┴──────────────╯
+			>;
+		};
 	};
 };
 
@@ -256,28 +292,6 @@
 //			&sk LALT &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT 			&kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT   &kp DEL
 //			&kp LC(Z)  &kp LC(X) &kp LC(C) &kp TAB   &kp LC(V)          &kp LC(BSPC) &kp BSPC &trans &trans  &trans
 //																		&trans &kp LCTRL    &kp ENTER  &mo FNC 
-//			>;
-//		};
-//
-//		// Function keys with modifiers
-//		fnc_layer {
-//			label = "FRow";
-//			bindings = <
-//			&kp F1 &kp F2 &kp F3 &kp F4 &kp F5                  &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 
-//			&sk LALT &sk LGUI &sk LSHIFT &sk LCTRL &kp RALT     &kp F11 &kp F12  &kp PRINTSCREEN &trans &trans
-//			&none &none &none &none &none				          &none &none &none &none &none 
-//							  &none &none              &none &none  
-//			>;
-//		};
-//
-//		// Low frequency symbols.
-//		symbols_2_layer {
-//			label = "Sym.2";
-//			bindings = <
-//			&kp ES_CARET &kp ES_UNDER &kp ES_PND &kp ES_EUR &kp ES_HASH         &none &none &none &none &none 
-//			&kp ES_BKTK &kp ES_TILDE &kp ES_BSLH &kp ES_PIPE &kp ES_AND         &none &none &none &none &none
-//			&none 			&none 			 &kp ES_SECT &kp ES_CCED &kp ES_DEG				  &none &none &none &none &none
-//																	&none &none        	&none &none 
 //			>;
 //		};
 //
