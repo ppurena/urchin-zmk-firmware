@@ -239,8 +239,8 @@
 			//label = "Nav";
 			bindings = <
 				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-					  //xxx            xxx            xxx            xxx            xxx                &kp PAUSE_BREAK  &kp PSCRN  		 &kp C_MUTE     &vol_up_down   &clck_slck
-					  xxx            xxx            xxx            xxx            xxx                xxx            xxx            xxx            xxx            xxx               
+					  xxx            xxx            xxx            xxx            xxx                &kp PAUSE_BREAK  &kp PSCRN  		 &kp C_MUTE     &vol_up_down   &clck_slck
+					  //xxx            xxx            xxx            xxx            xxx                xxx            xxx            xxx            xxx            xxx               
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
 						&kp LGUI       &kp LALT       &kp LCTRL      &kp LSHFT      xxx                  &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      xxx //&kp K_CMENU
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
