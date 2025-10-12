@@ -239,11 +239,12 @@
 			//label = "Nav";
 			bindings = <
 				//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-					  xxx            xxx            xxx            xxx            xxx                &kp PAUSE_BREAK  &kp PSCRN  		 &kp C_MUTE     &vol_up_down   &clck_slck
+					  //xxx            xxx            xxx            xxx            xxx                &kp PAUSE_BREAK  &kp PSCRN  		 &kp C_MUTE     &vol_up_down   &clck_slck
+					  xxx            xxx            xxx            xxx            xxx                xxx            xxx            xxx            xxx            xxx               
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-						&kp LGUI       &kp LALT       &kp LCTRL      &kp LSHFT      xxx                  &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &kp K_CMENU
+						&kp LGUI       &kp LALT       &kp LCTRL      &kp LSHFT      xxx                  &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      xxx //&kp K_CMENU
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-					  xxx            xxx            xxx            xxx            xxx                  &kp HOME       &kp PG_DN      &kp PG_UP      &kp END        &kp INS
+					  xxx            xxx            xxx            xxx            xxx                  &kp HOME       &kp PG_DN      &kp PG_UP      &kp END        xxx //&kp INS
 				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
 																													  ___            ___                  ___            ___
              //                                        ╰──────────────┴──────────────╯     ╰──────────────┴──────────────╯
