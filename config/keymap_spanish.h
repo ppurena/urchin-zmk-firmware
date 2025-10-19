@@ -97,4 +97,4 @@
 
 // Row 3
 #define ES_LBRC RA(APOS)           // {
-#define ES_RBRC RA(NUBS)           // }
+#define ES_RBRC RA(BSLH)           // }
