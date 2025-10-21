@@ -128,6 +128,15 @@
 			bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
 			mods = <(MOD_LSFT)>;
 		};
+
+		td_bspc_sym: td_bspc_sym {
+				compatible = "zmk,behavior-tap-dance";
+				label = "TD_BSPC_SYM";
+				#binding-cells = <0>;
+				tapping-term-ms = <200>;
+
+				bindings = <&kp BSPC>, <&mo SYM>;
+		};
 	};
 
 	macros {
@@ -204,7 +213,7 @@
 				//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
 						&kp Z          &kp X          &kp C          &kp V          &kp B               &kp N         &kp M          &kp COMMA      &kp PERIOD     &kp ES_MINUS
 				//╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
-																												 &lt NUM SPACE  &lt NAV TAB  				&kp RET 		  &lt SYM BSPC
+																												 &lt NUM SPACE  &lt NAV TAB  				&kp RET 		  &td_bspc_sym //&lt SYM BSPC
              //                              					 ╰──────────────┴──────────────╯   ╰──────────────┴──────────────╯	
 			>;
 		};
