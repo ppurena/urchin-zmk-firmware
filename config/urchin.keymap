@@ -30,8 +30,8 @@
 
 
 // tapping term definition
-#define TAP_TERM_MS 200
-#define QUICK_TAP_MS 150
+#define TAP_TERM_MS 300
+#define QUICK_TAP_MS 300
 
 // 34 keys physical layout
 #define LEFT_KEYS 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 // left-hand keys
@@ -163,7 +163,7 @@
 
 		combo_back_to_base {
 			timeout-ms = <200>;
-			key-positions = <22 23>;
+			key-positions = <23 24>;
 			bindings = <&to BASE>;
 			layers = <MOUSE>;
 		};
